@@ -4,22 +4,26 @@ on:
       - main
 jobs:
   react-jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: checkout code
-      uses: actions/checkout@v4
-    - name: setup node
-      uses: actions/setup-node@v4
-      with:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
           node-version: 16
-    - name: build code
-      run: npm run build
-    - name: build test
-      run: npm test
-    - name: deploy proj
-      run: npm run build
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
+      - name: build code
+        run: npm run build
+      - name: build test
+        run: npm test
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
+
+   
+      
+    
+     
+    
