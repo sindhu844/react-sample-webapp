@@ -1,0 +1,20 @@
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   react-jobs:
+#   runs-on: ubuntu-latest
+#   steps:
+#     - name: checkout code
+#       uses: actions/checkout@v4
+#     - name: setup node
+#       uses: actions/setup-node@v4
+#         with:
+#           node-version:
+#     - name: build code
+#       run: npm run build,
+#     - name: build test
+#       run: npm test
+#     - name: deploy proj
+#       run: npm start
